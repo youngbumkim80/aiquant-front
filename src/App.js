@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          "AI 퀀트 시스템"
         </a>
       </header>
     </div>
