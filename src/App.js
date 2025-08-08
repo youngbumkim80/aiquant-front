@@ -379,8 +379,7 @@ const App = () => {
                   const docRef = await addDoc(chatCollectionRef, { type: 'ai', content: data.content, timestamp: new Date() });
                   placeholderMessageId = docRef.id;
                 } else {
-                  const lastContent = (messages.find(m => m.id === placeholderMessageId)?.content || '') + data.content;
-                  await updateDoc(doc(chatCollectionRef, placeholderMessageId), { content: lastContent });
+                  await updateDoc(doc(chatCollectionRef, placeholderMessageId), { content: aiMessageContent + data.content });
                 }
                 aiMessageContent += data.content;
               } else {
@@ -647,4 +646,3 @@ const App = () => {
 };
 
 export default App;
-
